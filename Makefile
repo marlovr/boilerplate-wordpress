@@ -2,8 +2,7 @@ build:
 	aws ecr get-login --no-include-email --region ap-southeast-2 | bash && \
 	docker build -t wordpress-boilerplate . && \
 	docker tag wordpress-boilerplate:latest 776691755094.dkr.ecr.ap-southeast-2.amazonaws.com/wordpress-boilerplate:0.0.3 && \
-	docker push 776691755094.dkr.ecr.ap-southeast-2.amazonaws.com/wordpress-boilerplate:0.0.3 && \
-	bumpversion patch --allow-dirty
+	docker push 776691755094.dkr.ecr.ap-southeast-2.amazonaws.com/wordpress-boilerplate:0.0.3
 
 base:
 	cd iac/env/base && \
@@ -14,4 +13,5 @@ deploy:
 	cd iac/env/dev && \
 	terraform init && \
 	terraform apply --auto-approve && \
-	fargate service deploy -f docker-compose.yml --region ap-southeast-2
+	fargate service deploy -f docker-compose.yml --region ap-southeast-2 && \
+	bumpversion patch --allow-dirty
