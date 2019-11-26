@@ -2,7 +2,7 @@ version: '3.7'
 services:
   wordpress-boilerplate:
     build: ../../../
-    image: 776691755094.dkr.ecr.ap-southeast-2.amazonaws.com/wordpress-boilerplate:0.0.3
+    image: 776691755094.dkr.ecr.ap-southeast-2.amazonaws.com/wordpress-boilerplate:0.0.4
     ports:
       - 80:80
     env_file:
