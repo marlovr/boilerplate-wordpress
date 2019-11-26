@@ -1,0 +1,3 @@
+cluster: wordpress-boilerplate-dev
+service: wordpress-boilerplate-dev
+region: ap-southeast-2

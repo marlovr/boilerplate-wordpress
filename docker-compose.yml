@@ -1,0 +1,15 @@
+wp:
+  build: .
+  ports:
+    - 80:80
+  links:
+    - mysql
+mysql:
+  image: mysql:5.7
+  environment:
+    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_DATABASE=wpdb
+  ports:
+    - 3306:3306
+  volumes:
+    - ./database:/var/lib/mysql
