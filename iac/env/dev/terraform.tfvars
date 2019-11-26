@@ -1,8 +1,7 @@
-# app/env to scaffold
 app         = "wordpress-boilerplate"
 environment = "dev"
 
-internal       = "true"
+internal       = "false"
 container_port = "80"
 replicas       = "1"
 health_check   = "/"
