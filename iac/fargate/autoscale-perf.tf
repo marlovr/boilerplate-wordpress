@@ -34,18 +34,6 @@
  *
  */
 
-# If the average CPU utilization over a minute drops to this threshold,
-# the number of containers will be reduced (but not below ecs_autoscale_min_instances).
-variable "ecs_as_cpu_low_threshold_per" {
-  default = "20"
-}
-
-# If the average CPU utilization over a minute rises to this threshold,
-# the number of containers will be increased (but not above ecs_autoscale_max_instances).
-variable "ecs_as_cpu_high_threshold_per" {
-  default = "80"
-}
-
 resource "aws_cloudwatch_metric_alarm" "cpu_utilization_high" {
   alarm_name          = "${var.app}-${var.environment}-CPU-Utilization-High-${var.ecs_as_cpu_high_threshold_per}"
   comparison_operator = "GreaterThanOrEqualToThreshold"
