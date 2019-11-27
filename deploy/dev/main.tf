@@ -1,6 +1,11 @@
 locals {
   # Your token to logz.io
   logz_token = ""
+  
+  # Database
+  db_user = "marlo"
+  db_pass = ""
+  db_name = "wpdb"
 
   # app/env to scaffold
   app         = "wordpress-boilerplate"
