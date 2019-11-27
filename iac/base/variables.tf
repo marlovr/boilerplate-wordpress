@@ -7,7 +7,7 @@
 # Other possible values: `us-east-2`, `us-west-1`, or `us-west-2`.
 # Currently, Fargate is only available in `us-east-1`.
 variable "region" {
-  default = "us-east-1"
+  default = "ap-southeast-2"
 }
 
 # The AWS profile to use, this would be the same value used in AWS_PROFILE.
@@ -26,4 +26,9 @@ variable "app" {
 # and `customer`, who the application was create for.
 variable "tags" {
   type = map(string)
+}
+
+
+# The AWS Profile to use
+variable "aws_profile" {
 }

@@ -9,13 +9,9 @@ terraform {
   }
 }
 
-# The AWS Profile to use
-variable "aws_profile" {
-}
-
 provider "aws" {
   version = ">= 1.53.0"
-    region  = "ap-southeast-2"
+  region  = "ap-southeast-2"
   profile = var.aws_profile
 }
 

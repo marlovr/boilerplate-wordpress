@@ -1,13 +1,3 @@
-# The auth token to use for sending logs to Logz.io
-variable "logz_token" {
-  default = "hwZbpxtozbOgCvvhXrwmksdcKDSfeBgA"
-}
-
-# The endpoint to use for sending logs to Logz.io
-variable "logz_url" {
-  default = "https://listener.logz.io:8071"
-}
-
 resource "aws_iam_role" "iam_for_lambda_logz" {
   name = "${var.app}-${var.environment}-logz-role"
 
